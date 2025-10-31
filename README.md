@@ -1,68 +1,112 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 💼 GitHub Jobs API React App
 
-## Available Scripts
+A full-stack job listing platform built with **React** (frontend) and **Node.js + Express** (backend).  
+It fetches remote job listings using a third-party API (RemoteOK / GitHub Jobs style) and displays them beautifully with search and pagination.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🔍 Search jobs by description, location, and full-time status  
+- 📃 Expandable job descriptions  
+- 💰 Salary and type badges  
+- 🧠 Smart API proxy backend to bypass CORS  
+- ⚡ Pagination for seamless job browsing  
+- 🌐 Fully deployable (Frontend + Backend) on Netlify / Render
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧠 How It Works
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- The **backend (`server.mjs`)** fetches jobs from the RemoteOK API and serves them at `http://localhost:5000/jobs`.  
+- The **frontend (React)** requests data from this backend (instead of directly from RemoteOK) to avoid CORS issues.  
+- The jobs are displayed in a responsive Bootstrap layout with filters and pagination.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ Technologies Used
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+**Frontend**
+- React.js  
+- React Bootstrap  
+- Axios  
+- React Hooks (useState, useEffect)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Backend**
+- Node.js  
+- Express.js  
+- Axios  
+- CORS
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🏗️ 2️⃣ Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+GitHub-Jobs-API-React-App-master/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ├── backend/
+    
+        │ ├── server.mjs # Express backend to fetch jobs via proxy
+        │ ├── package.json # Backend dependencies
+        │ └── ... # Other backend files
+    
+    ├── src/
+    
+        │ ├── App.js # Main React component
+        │ ├── Job.js # Job card component
+        │ ├── JobsPagination.js # Pagination component
+        │ ├── SearchForm.js # Job search filter form
+        │ ├── useFetchJobs.js # Custom hook to fetch jobs
+        │ ├── index.js # React entry point
+        │ └── ... # Other React components or styles
+    
+    ├── public/
+    
+        │ ├── index.html # HTML template for React app
+        │ └── favicon.ico # App icon
+    
+    ├── package.json # Frontend dependencies
+    ├── README.md # Project documentation
+    └── .gitignore # Git ignored files list
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## ⚙️ 2️⃣ Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Make sure you have installed:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Node.js](https://nodejs.org/) (v16 or newer)
+- npm (comes with Node.js)
+- Git
 
-### Code Splitting
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## 🧠 3️⃣ Clone the Repository
 
-### Analyzing the Bundle Size
+    Open Command Prompt / Terminal and run:
+    
+    git clone https://github.com/Jainishd24/GitHub-Jobs-API-React-App-master.git
+    cd GitHub-Jobs-API-React-App-master
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+---
 
-### Making a Progressive Web App
+## 🚀 4️⃣ Start the Backend 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    Install dependencies 
+    npm install
+    
+    Run the backend server: 
+    node server.mjs 
+    
+    ✅ The backend will start running on: http://localhost:5000 
+    Keep this terminal open — don’t close it.
 
-### Advanced Configuration
+--- 
+## 💻 5️⃣ Start the Frontend
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+    Open a new terminal 
+    
+    Start the React app: 
+    npm start 
+    
+    ✅ The frontend will open automatically at: http://localhost:3000
